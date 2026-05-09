@@ -1,7 +1,7 @@
 <h1 align="center">Handwritten Digit Classification on MNIST Using Artificial Neural Network (MLP)</h1>
 
 <p align="center">
-  <b>Deep Learning mini project focused on classifying handwritten digits (0–9) using a Multi-Layer Perceptron (ANN) model.</b>
+  <b>A deep learning mini project for classifying handwritten digits (0–9) using a Multi-Layer Perceptron (ANN) model built with TensorFlow/Keras.</b>
 </p>
 
 <p align="center">
@@ -15,21 +15,28 @@
   <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Task-Multi--Class%20Classification-6f42c1?style=flat-square" />
+  <img src="https://img.shields.io/badge/Dataset-MNIST-0a9396?style=flat-square" />
+  <img src="https://img.shields.io/badge/Model-MLP%20%7C%20ANN-ff6b6b?style=flat-square" />
+  <img src="https://img.shields.io/badge/Accuracy-~97--98%25-success?style=flat-square" />
+</p>
+
 ---
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Why This Project](#why-this-project)
+- [Why This Project Matters](#why-this-project-matters)
 - [Dataset Information](#dataset-information)
-- [Project Highlights](#project-highlights)
-- [Workflow](#workflow)
+- [Project Snapshot](#project-snapshot)
+- [Workflow Pipeline](#workflow-pipeline)
 - [Data Preprocessing](#data-preprocessing)
 - [Model Architecture](#model-architecture)
 - [Training Configuration](#training-configuration)
 - [Results and Insights](#results-and-insights)
 - [Project Visuals](#project-visuals)
-- [Tools and Libraries](#tools-and-libraries)
+- [Tech Stack](#tech-stack)
 - [Repository Structure](#repository-structure)
 - [Future Improvements](#future-improvements)
 - [Author](#author)
@@ -38,31 +45,31 @@
 
 ## Project Overview
 
-This project builds a handwritten digit classification system using the **MNIST dataset** and an **Artificial Neural Network (MLP)**.  
-The main objective is to classify grayscale digit images into one of the ten digit classes from **0 to 9**.
+This project focuses on **handwritten digit classification** using the famous **MNIST dataset** and an **Artificial Neural Network (MLP)** model.
 
-This project covers the complete deep learning workflow:
+The main goal is to classify grayscale images of digits from **0 to 9** by building a deep learning pipeline that includes:
 - data loading
 - image visualization
 - preprocessing
 - ANN model building
-- training and validation
+- model training
+- validation
 - prediction
 - performance evaluation
 
 ---
 
-## Why This Project
+## Why This Project Matters
 
-This project is an important step in progressing from traditional machine learning projects to **deep learning-based image classification**.
+This project represents an important step forward from traditional machine learning mini projects into the domain of **deep learning and image classification**.
 
 It demonstrates:
-- understanding of neural networks for classification
-- handling of image data in tabular-vector form
-- practical usage of TensorFlow/Keras
-- model evaluation using confusion matrix and prediction outputs
+- understanding of neural network-based classification
+- practical usage of TensorFlow and Keras
+- conversion of image data into model-ready input features
+- evaluation of model performance through confusion matrix and visual predictions
 
-It also shows an upgrade from earlier GitHub mini projects by presenting a more structured deep learning pipeline.
+It also shows visible growth in project presentation and repository quality compared to earlier GitHub uploads.
 
 ---
 
@@ -70,16 +77,15 @@ It also shows an upgrade from earlier GitHub mini projects by presenting a more 
 
 - **Dataset Name:** MNIST Handwritten Digits
 - **Source:** Keras built-in dataset
-- **Total Images:** 70,000
+- **Total Samples:** 70,000 images
 - **Training Samples:** 60,000
 - **Testing Samples:** 10,000
-- **Image Dimension:** 28 × 28 pixels
-- **Number of Classes:** 10
-- **Target Labels:** Digits from 0 to 9
+- **Image Size:** 28 × 28 pixels
+- **Classes:** 10 digits (0–9)
 
 ---
 
-## Project Highlights
+## Project Snapshot
 
 | Feature | Details |
 |---------|---------|
@@ -88,48 +94,53 @@ It also shows an upgrade from earlier GitHub mini projects by presenting a more 
 | Dataset | MNIST |
 | Model Used | Artificial Neural Network (MLP) |
 | Framework | TensorFlow / Keras |
-| Input Form | Flattened 28 × 28 images |
-| Output | Predicted digit class |
+| Input Shape | 28 × 28 grayscale image |
+| Processed Input | Flattened 784-dimensional vector |
+| Output | Predicted digit class (0–9) |
 | Performance | Around 97–98% test accuracy |
 
 ---
 
-## Workflow
+## Workflow Pipeline
 
 ```text
 MNIST Dataset
      ↓
-Data Visualization
+Image Visualization
      ↓
-Normalization and Reshaping
+Normalization
+     ↓
+Flattening (28×28 → 784)
      ↓
 One-Hot Encoding
      ↓
 ANN / MLP Model Building
      ↓
-Model Training
+Training & Validation
      ↓
-Evaluation on Test Data
+Model Evaluation
      ↓
-Prediction and Error Analysis
+Prediction & Error Analysis
 ```
 
 ---
 
 ## Data Preprocessing
 
-The following preprocessing steps were applied before model training:
+Before training the model, the following preprocessing steps were applied:
 
-- Pixel values were scaled to the range **[0, 1]**
-- Each 28 × 28 image was flattened into a **784-dimensional input vector**
-- Output labels were converted using **one-hot encoding**
-- Training and testing data were prepared separately for clean model evaluation
+- Pixel values were normalized to the range **[0, 1]**
+- Each 28 × 28 image was flattened into a **784-dimensional vector**
+- Class labels were transformed using **one-hot encoding**
+- Training and testing sets were kept separate for proper evaluation
+
+These steps prepared the image data for efficient learning using a dense neural network.
 
 ---
 
 ## Model Architecture
 
-The neural network used in this project is a **Multi-Layer Perceptron (MLP)** with fully connected dense layers.
+The model used in this project is a **Multi-Layer Perceptron (MLP)** built using fully connected dense layers.
 
 ### Architecture Summary
 
@@ -138,9 +149,9 @@ The neural network used in this project is a **Multi-Layer Perceptron (MLP)** wi
 - **Hidden Layer 2:** 64 neurons with ReLU activation
 - **Output Layer:** 10 neurons with Softmax activation
 
-### Learning Objective
+### Model Goal
 
-The model learns useful pixel-level patterns from digit images and maps them to the correct digit class.
+The ANN learns hidden numerical patterns from pixel intensities and predicts the most probable handwritten digit class.
 
 ---
 
@@ -157,48 +168,50 @@ The model learns useful pixel-level patterns from digit images and maps them to 
 
 ## Results and Insights
 
-- The model achieved approximately **97–98% accuracy** on the test dataset.
-- Training and validation behavior showed stable learning performance.
-- Most handwritten digits were classified correctly.
-- A few errors occurred between visually similar digits.
-- This project highlights how even a basic ANN can perform strongly on a well-structured image dataset like MNIST.
+- The model achieved around **97–98% test accuracy**
+- Training and validation accuracy remained consistently strong
+- Loss decreased steadily across epochs, indicating good learning behavior
+- The confusion matrix showed strong class-wise prediction performance
+- A few misclassifications occurred between visually similar handwritten digits
+
+This project shows that even a basic ANN/MLP can perform extremely well on structured image-classification tasks like MNIST.
 
 ---
 
 ## Project Visuals
 
-> Add your saved output images from the `Output_images` folder here for a more attractive recruiter-facing README.
+### Training vs Validation Accuracy
 
-### Sample Output Sections You Can Show
-
-- Sample handwritten digit images
-- Model training accuracy/loss curves
-- Confusion matrix
-- Predicted vs actual digit outputs
-
-Example image embedding format:
-
-```markdown
 <p align="center">
-  <img src="Output_images/your-image-name.png" width="700"/>
+  <img src="Output_images/Accuracy%20Plot.png" width="750" alt="Training vs Validation Accuracy Plot" />
 </p>
-```
 
-If you want, this section can later be upgraded with your exact image file names.
+### Training vs Validation Loss
+
+<p align="center">
+  <img src="Output_images/Loss%20Plot.png" width="750" alt="Training vs Validation Loss Plot" />
+</p>
+
+### Confusion Matrix
+
+<p align="center">
+  <img src="Output_images/Confusion%20Matrix%20MNIST%20ANN.png" width="750" alt="Confusion Matrix for MNIST ANN Model" />
+</p>
+
+### Visual Predictions
+
+<p align="center">
+  <img src="Output_images/Visual%20Predictions.png" width="900" alt="Visual Predictions of MNIST Handwritten Digits" />
+</p>
 
 ---
 
-## Tools and Libraries
+## Tech Stack
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- TensorFlow
-- Keras
-- Scikit-learn
-- Jupyter Notebook
+- **Programming Language:** Python
+- **Libraries:** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn
+- **Deep Learning Framework:** TensorFlow / Keras
+- **Environment:** Jupyter Notebook
 
 ---
 
@@ -211,7 +224,10 @@ MNIST-Artificial-Neural-Network-Handwritten-Digits-Classification/
 │   └── MNIST_Artificial_Neural_Network_Handwritten_Digits_Classification.ipynb
 │
 ├── Output_images/
-│   └── project output images
+│   ├── Accuracy Plot.png
+│   ├── Confusion Matrix MNIST ANN.png
+│   ├── Loss Plot.png
+│   └── Visual Predictions.png
 │
 ├── requirements.txt
 ├── README.md
@@ -225,11 +241,11 @@ MNIST-Artificial-Neural-Network-Handwritten-Digits-Classification/
 
 This project can be improved further by:
 
-- implementing a **Convolutional Neural Network (CNN)** for better image feature learning
-- experimenting with dropout and regularization
+- implementing a **Convolutional Neural Network (CNN)** for stronger image feature extraction
+- adding dropout for better regularization
 - tuning hidden layers and neuron counts
-- comparing ANN vs CNN performance on MNIST
-- deploying the trained model as a simple digit prediction web app
+- comparing ANN vs CNN performance
+- deploying the trained model as a simple web-based digit recognizer
 
 ---
 
