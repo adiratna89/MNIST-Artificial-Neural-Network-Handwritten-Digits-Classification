@@ -1,4 +1,4 @@
-<h1 align="center">MNIST Handwritten Digit Classification using Artificial Neural Network (MLP)</h1>
+<h1 align="center">Handwritten Digit Classification on MNIST using Artificial Neural Network (MLP)</h1>
 
 <p align="center">
   <b>A recruiter-friendly deep learning mini project that classifies handwritten digits (0–9) using a Multi-Layer Perceptron (ANN) model built with TensorFlow/Keras.</b>
